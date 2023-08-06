@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Floodgate Data</title>
+</head>
+<body>
+    <h1>Floodgate Data</h1>
+    <table>
+        <tr>
+            <th>ID_PINTU_AIR</th>
+            <th>NAMA_PINTU_AIR</th>
+            <th>TANGGAL</th>
+            <th>TINGGI_AIR</th>
+            <th>STATUS_SIAGA</th>
+        </tr>
+        {% for data in data_list %}
+        <tr>
+            <td>{{ data['ID_PINTU_AIR'] }}</td>
+            <td>{{ data['NAMA_PINTU_AIR'] }}</td>
+            <td>{{ data['TANGGAL'] }}</td>
+            <td>{{ data['TINGGI_AIR'] }}</td>
+            <td>{{ data['STATUS_SIAGA'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
