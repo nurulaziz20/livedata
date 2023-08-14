@@ -1,27 +1,88 @@
+<!-- data.html -->
 <!DOCTYPE html>
 <html>
 <head>
     <title>Floodgate Data</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        #map {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+
 </head>
 <body>
-    <h1>Floodgate Data</h1>
-    <table>
-        <tr>
-            <th>ID_PINTU_AIR</th>
-            <th>NAMA_PINTU_AIR</th>
-            <th>TANGGAL</th>
-            <th>TINGGI_AIR</th>
-            <th>STATUS_SIAGA</th>
-        </tr>
-        {% for data in data_list %}
-        <tr>
-            <td>{{ data['ID_PINTU_AIR'] }}</td>
-            <td>{{ data['NAMA_PINTU_AIR'] }}</td>
-            <td>{{ data['TANGGAL'] }}</td>
-            <td>{{ data['TINGGI_AIR'] }}</td>
-            <td>{{ data['STATUS_SIAGA'] }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+
+<!-- Include the navbar -->
+{% include 'navbar.html' %}
+
+<div class="container mt-4">
+    <h2 class="text-center">Lokasi Bendungan </h1>
+    <div id="map" class="mt-4"></div>
+</div>
+
+    <div class="container">
+        <h4 class="mt-2">Tinggi Muka Air</h1>
+        <table class="table table-bordered table-striped mt-4">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID PINTU AIR</th>
+                    <th>NAMA PINTU AIR</th>
+                    <th>TANGGAL</th>
+                    <th>TINGGI AIR</th>
+                    <th>STATUS SIAGA</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in data_list %}
+                <tr>
+                    <td>{{ data['ID_PINTU_AIR'] }}</td>
+                    <td>{{ data['NAMA_PINTU_AIR'] }}</td>
+                    <td>{{ data['TANGGAL'] }}</td>
+                    <td>{{ data['TINGGI_AIR'] }}</td>
+                    <td>{{ data['STATUS_SIAGA'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+ <!-- Map Section -->
+ 
+ 
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <script>
+        var map = L.map('map').setView([-6.2088, 106.8456], 12); // Set initial coordinates and zoom level
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        var geojsonUrl = 'https://jakartasatu.jakarta.go.id/server/rest/services/DSDA/Pompa__Pintu__Sistem_Polder_View/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson';
+
+        fetch(geojsonUrl)
+            .then(response => response.json())
+            .then(data => {
+                var geojsonLayer = L.geoJSON(data.features, {
+                    pointToLayer: function (feature, latlng) {
+                        return L.marker(latlng);
+                    },
+                    onEachFeature: function (feature, layer) {
+                        layer.bindPopup('<b>' + feature.properties.NAMA_PINTU + '</b><br>' + feature.properties.KEWENANGAN);
+                    }
+                });
+
+                geojsonLayer.addTo(map);
+            })
+            .catch(error => console.error('Error fetching GeoJSON:', error));
+    </script>
+
 </body>
 </html>

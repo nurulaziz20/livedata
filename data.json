@@ -1,0 +1,653 @@
+{
+    "objectIdFieldName": "OBJECTID",
+    "globalIdFieldName": "GLOBALID",
+    "geometryType": "esriGeometryPoint",
+    "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+    },
+    "fields": [
+        {
+            "name": "OBJECTID",
+            "alias": "OBJECTID",
+            "type": "esriFieldTypeOID"
+        },
+        {
+            "name": "NO",
+            "alias": "NO",
+            "type": "esriFieldTypeDouble"
+        },
+        {
+            "name": "NAMA_PINTU",
+            "alias": "Nama Pintu",
+            "type": "esriFieldTypeString",
+            "length": 254
+        },
+        {
+            "name": "KEWENANGAN",
+            "alias": "Kewenangan",
+            "type": "esriFieldTypeString",
+            "length": 254
+        },
+        {
+            "name": "SISTEM_ALI",
+            "alias": "Sistem Aliran",
+            "type": "esriFieldTypeString",
+            "length": 254
+        },
+        {
+            "name": "X",
+            "alias": "X",
+            "type": "esriFieldTypeDouble"
+        },
+        {
+            "name": "Y",
+            "alias": "Y",
+            "type": "esriFieldTypeDouble"
+        },
+        {
+            "name": "JML_PA",
+            "alias": "Jumlah Pintu Air",
+            "type": "esriFieldTypeInteger"
+        },
+        {
+            "name": "GLOBALID",
+            "alias": "GLOBALID",
+            "type": "esriFieldTypeGlobalID",
+            "length": 38
+        },
+        {
+            "name": "CREATED_USER",
+            "alias": "CREATED_USER",
+            "type": "esriFieldTypeString",
+            "length": 255
+        },
+        {
+            "name": "CREATED_DATE",
+            "alias": "CREATED_DATE",
+            "type": "esriFieldTypeDate",
+            "length": 8
+        },
+        {
+            "name": "LAST_EDITED_USER",
+            "alias": "LAST_EDITED_USER",
+            "type": "esriFieldTypeString",
+            "length": 255
+        },
+        {
+            "name": "LAST_EDITED_DATE",
+            "alias": "LAST_EDITED_DATE",
+            "type": "esriFieldTypeDate",
+            "length": 8
+        }
+    ],
+    "features": [
+        {
+            "attributes": {
+                "OBJECTID": 1,
+                "NO": 1.0,
+                "NAMA_PINTU": "Citraland",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Barat",
+                "SISTEM_ALI": "Aliran Barat",
+                "X": -6.16745439,
+                "Y": 106.78809165,
+                "JML_PA": 0,
+                "GLOBALID": "{101DC7B6-4FDC-4436-9122-7BD4DEC1D8EE}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": "dki_dsda1",
+                "LAST_EDITED_DATE": 1580197059000
+            },
+            "geometry": {
+                "x": 106.78809165031203,
+                "y": -6.167454393731314
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 2,
+                "NO": 2.0,
+                "NAMA_PINTU": "Kali Duri",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Barat",
+                "SISTEM_ALI": "Aliran Barat",
+                "X": -6.14237197,
+                "Y": 106.79107402,
+                "JML_PA": 0,
+                "GLOBALID": "{A768F4CF-A0EF-43CE-AD5A-D9A58F4BCFBB}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.7910740151706,
+                "y": -6.1423719666515035
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 3,
+                "NO": 3.0,
+                "NAMA_PINTU": "Kampung Gusti",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Barat",
+                "SISTEM_ALI": "Aliran Barat",
+                "X": -6.14502601,
+                "Y": 106.77559901,
+                "JML_PA": 0,
+                "GLOBALID": "{EE52D180-90C9-4A48-BFAB-6D9459A1D798}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.77559900974724,
+                "y": -6.145026012773091
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 4,
+                "NO": 4.0,
+                "NAMA_PINTU": "Istiqlal",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Pusat",
+                "SISTEM_ALI": "Aliran Tengah",
+                "X": -6.16814699,
+                "Y": 106.83144503,
+                "JML_PA": 0,
+                "GLOBALID": "{74351D39-10C8-4615-8042-36C0BC2BB4EE}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.83144503258654,
+                "y": -6.168146990281046
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 5,
+                "NO": 5.0,
+                "NAMA_PINTU": "Jembatan Merah",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Pusat",
+                "SISTEM_ALI": "Aliran Tengah",
+                "X": -6.14888898,
+                "Y": 106.83451398,
+                "JML_PA": 0,
+                "GLOBALID": "{620CCEB9-94F4-4C12-997A-1A4A65B35780}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.83451398270525,
+                "y": -6.148888980974707
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 6,
+                "NO": 6.0,
+                "NAMA_PINTU": "Karet",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Pusat",
+                "SISTEM_ALI": "Aliran Tengah",
+                "X": -6.19837004,
+                "Y": 106.80981704,
+                "JML_PA": 0,
+                "GLOBALID": "{B921A09F-C7D9-4E56-A64A-E7F56ECD560A}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.8098170404177,
+                "y": -6.198370038313542
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 7,
+                "NO": 7.0,
+                "NAMA_PINTU": "Manggarai",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Pusat",
+                "SISTEM_ALI": "Aliran Tengah",
+                "X": -6.20790303,
+                "Y": 106.84843901,
+                "JML_PA": 0,
+                "GLOBALID": "{271F32D2-6B11-4F83-B968-1C76F9C8EA8D}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.84843900621621,
+                "y": -6.207903027682774
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 8,
+                "NO": 8.0,
+                "NAMA_PINTU": "Pasar Ikan",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Utara",
+                "SISTEM_ALI": "Aliran Tengah",
+                "X": -6.12669,
+                "Y": 106.809655,
+                "JML_PA": 0,
+                "GLOBALID": "{F9B632DF-9DC2-44AF-976A-C031A665E122}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.80965499969713,
+                "y": -6.126689999905033
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 9,
+                "NO": 9.0,
+                "NAMA_PINTU": "Marina",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Utara",
+                "SISTEM_ALI": "Aliran Tengah",
+                "X": -6.126688,
+                "Y": 106.82960101,
+                "JML_PA": 0,
+                "GLOBALID": "{0D32B934-81EA-4699-B5C5-783C2993AC9B}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.82960101415927,
+                "y": -6.126688002050764
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 10,
+                "NO": 10.0,
+                "NAMA_PINTU": "Tangki",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Utara",
+                "SISTEM_ALI": "Aliran Tengah",
+                "X": -6.147081,
+                "Y": 106.817312,
+                "JML_PA": 0,
+                "GLOBALID": "{0F7E3654-852F-4332-AF96-5931057F09BB}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.81731200044452,
+                "y": -6.147081000297323
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 11,
+                "NO": 11.0,
+                "NAMA_PINTU": "Bali Matraman",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Selatan",
+                "SISTEM_ALI": "Aliran Tengah",
+                "X": -6.21863903,
+                "Y": 106.85272192,
+                "JML_PA": 0,
+                "GLOBALID": "{B1C26D21-D91D-4C81-B8C1-FF4830314746}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.85272191719534,
+                "y": -6.218639029308686
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 12,
+                "NO": 12.0,
+                "NAMA_PINTU": "Sultan Agung",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Selatan",
+                "SISTEM_ALI": "Aliran Tengah",
+                "X": -6.20936019,
+                "Y": 106.84537126,
+                "JML_PA": 0,
+                "GLOBALID": "{E0D297AF-3CBB-4D3E-A078-7FCC2B53E6DE}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.84537126439214,
+                "y": -6.2093601943232795
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 13,
+                "NO": 13.0,
+                "NAMA_PINTU": "Sogo",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Pusat",
+                "SISTEM_ALI": "Aliran Tengah",
+                "X": -6.19390087,
+                "Y": 106.8207558,
+                "JML_PA": 0,
+                "GLOBALID": "{4EDD29E6-5F3E-4333-A714-BED0B7C20690}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.82075580106626,
+                "y": -6.193900871988954
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 14,
+                "NO": 14.0,
+                "NAMA_PINTU": "Honda 1",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Pusat",
+                "SISTEM_ALI": "Aliran Timur",
+                "X": -6.16270202,
+                "Y": 106.88036199,
+                "JML_PA": 0,
+                "GLOBALID": "{6BF588E6-A928-4CC4-B959-8E0B6627205A}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.8803619870079,
+                "y": -6.1627020217142086
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 15,
+                "NO": 15.0,
+                "NAMA_PINTU": "HEK",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Timur",
+                "SISTEM_ALI": "Aliran Timur",
+                "X": -6.28758299,
+                "Y": 106.87063001,
+                "JML_PA": 0,
+                "GLOBALID": "{70925E1A-10E3-4007-A865-DA4794DB3FF5}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.87063001119115,
+                "y": -6.28758299198684
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 16,
+                "NO": 16.0,
+                "NAMA_PINTU": "Pulo Gadung",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Timur",
+                "SISTEM_ALI": "Aliran Timur",
+                "X": -6.190609,
+                "Y": 106.904119,
+                "JML_PA": 0,
+                "GLOBALID": "{3647B83C-8D1A-435E-AFF6-B74F91B974AD}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.9041189998661,
+                "y": -6.1906089999951215
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 17,
+                "NO": 17.0,
+                "NAMA_PINTU": "Sungai Landak",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Utara",
+                "SISTEM_ALI": "Aliran Timur",
+                "X": -6.10690503,
+                "Y": 106.94048798,
+                "JML_PA": 0,
+                "GLOBALID": "{C5DC1125-DCBC-44C8-A63E-5CEAD6F54F5A}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.94048797659654,
+                "y": -6.106905033794482
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 18,
+                "NO": 18.0,
+                "NAMA_PINTU": "Kali Mati",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Utara",
+                "SISTEM_ALI": "Aliran Timur",
+                "X": -6.13861503,
+                "Y": 106.83315301,
+                "JML_PA": 0,
+                "GLOBALID": "{12962EB8-677B-4F24-84D1-37D6B2EE924E}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.83315301299965,
+                "y": -6.138615030830604
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 19,
+                "NO": 19.0,
+                "NAMA_PINTU": "KW 31",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Timur",
+                "SISTEM_ALI": "Aliran Timur",
+                "X": -6.21124991,
+                "Y": 106.86174016,
+                "JML_PA": 0,
+                "GLOBALID": "{B2D40AA2-872E-41D5-B11F-96F4DA52003A}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.86174015457036,
+                "y": -6.2112499110291495
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 20,
+                "NO": 20.0,
+                "NAMA_PINTU": "Roa Malaka",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Utara",
+                "SISTEM_ALI": "Aliran Timur",
+                "X": -6.13598295,
+                "Y": 106.94064446,
+                "JML_PA": 0,
+                "GLOBALID": "{FB7A9780-0DD0-4194-90CD-6D929060C75E}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.94064445813818,
+                "y": -6.1359829533603785
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 21,
+                "NO": 21.0,
+                "NAMA_PINTU": "Sunter C",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Utara",
+                "SISTEM_ALI": "Aliran Timur",
+                "X": -6.14025271,
+                "Y": 106.85678096,
+                "JML_PA": 0,
+                "GLOBALID": "{50018F50-098E-4584-A59D-BAFB4B48F84D}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.85678096110836,
+                "y": -6.140252706531722
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 22,
+                "NO": 22.0,
+                "NAMA_PINTU": "Petukangan",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Timur",
+                "SISTEM_ALI": "Aliran Timur",
+                "X": -6.18638172,
+                "Y": 106.92258121,
+                "JML_PA": 0,
+                "GLOBALID": "{B2742614-E414-4189-992B-8989251C5EB1}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.92258120693685,
+                "y": -6.186381721410082
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 23,
+                "NO": 23.0,
+                "NAMA_PINTU": "Sunter P8",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Utara",
+                "SISTEM_ALI": "Aliran Timur",
+                "X": -6.16345161,
+                "Y": 106.88147412,
+                "JML_PA": 0,
+                "GLOBALID": "{4A2735E1-FEF8-42AF-945B-F8ADCB2B5B06}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.88147411910617,
+                "y": -6.163451605582478
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 24,
+                "NO": 24.0,
+                "NAMA_PINTU": "Pertamina",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Utara",
+                "SISTEM_ALI": "Aliran Timur",
+                "X": -6.13700598,
+                "Y": 106.8929541,
+                "JML_PA": 0,
+                "GLOBALID": "{C1A8171D-1CA9-4B4D-98B5-6B6DD2A1F5F6}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.89295409560455,
+                "y": -6.137005976894095
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 25,
+                "NO": 25.0,
+                "NAMA_PINTU": "Honda 2",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Utara",
+                "SISTEM_ALI": "Aliran Timur",
+                "X": -6.16281556,
+                "Y": 106.88047033,
+                "JML_PA": 0,
+                "GLOBALID": "{FCAFC85D-C8F0-4EF0-B31E-A0F20B0F4D2F}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.88047032597444,
+                "y": -6.1628155603265045
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 26,
+                "NO": 26.0,
+                "NAMA_PINTU": "Cideng",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Pusat",
+                "SISTEM_ALI": "Aliran Tengah",
+                "X": -6.17163504,
+                "Y": 106.81098598,
+                "JML_PA": 0,
+                "GLOBALID": "{65F5722D-5C02-429F-8BDD-C9B1F68C3D0B}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.81098598119914,
+                "y": -6.171635034754506
+            }
+        },
+        {
+            "attributes": {
+                "OBJECTID": 27,
+                "NO": 27.0,
+                "NAMA_PINTU": "Flushing Ancol",
+                "KEWENANGAN": "Suku Dinas SDA Jakarta Utara",
+                "SISTEM_ALI": "Aliran Timur",
+                "X": -6.13000698,
+                "Y": 106.83126801,
+                "JML_PA": 0,
+                "GLOBALID": "{21BA2E52-FFC1-403B-A73C-D3F2D551F1F1}",
+                "CREATED_USER": null,
+                "CREATED_DATE": null,
+                "LAST_EDITED_USER": null,
+                "LAST_EDITED_DATE": null
+            },
+            "geometry": {
+                "x": 106.83126800676123,
+                "y": -6.130006984326458
+            }
+        }
+    ]
+}

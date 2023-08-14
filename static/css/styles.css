@@ -1,0 +1,34 @@
+/* styles.css */
+
+/* Style for the navigation links in the navbar */
+.navbar-nav .nav-link {
+    color: #333;
+}
+
+/* Hover effect for the navigation links */
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+}
+
+/* Active link style */
+.navbar-nav .nav-item.active .nav-link {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Apply padding to navbar items to make it consistent */
+.navbar-nav .nav-item {
+    margin-right: 10px;
+}
+
+/* Make the active link indicator extend to the bottom border */
+.navbar-nav .nav-item.active .nav-link::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007bff;
+}

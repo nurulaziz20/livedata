@@ -51,9 +51,15 @@ def main():
 
 # Flask route to render the data on a webpage
 @app.route('/')
+def home():
+    return render_template('home.html')
+
+# Flask route to render the "Data" page
+@app.route('/data')
 def show_data():
     data_list = process_data()
     return render_template('data.html', data_list=data_list)
+
 
 if __name__ == "__main__":
     main()
