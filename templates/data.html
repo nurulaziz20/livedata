@@ -1,9 +1,7 @@
-<!-- data.html -->
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Floodgate Data</title>
-    <!-- Add Bootstrap CSS -->
+    <title>Data Tinggi Muka Air</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <style>
@@ -11,78 +9,170 @@
             width: 100%;
             height: 500px;
         }
+      .siaga-3 {
+            background-color: orange;
+        }
+        .normal {
+            background-color: green;
+        }
+        .siaga-2 {
+            background-color: yellow;
+        }
+        .siaga-4 {
+            background-color: red;
+        }
     </style>
-
 </head>
 <body>
-
-<!-- Include the navbar -->
 {% include 'navbar.html' %}
-
-<div class="container mt-4">
-    <h2 class="text-center">Lokasi Bendungan </h1>
-    <div id="map" class="mt-4"></div>
-</div>
-
-    <div class="container">
-        <h4 class="mt-2">Tinggi Muka Air</h1>
-        <table class="table table-bordered table-striped mt-4">
-            <thead class="thead-dark">
-                <tr>
-                    <th>ID PINTU AIR</th>
-                    <th>NAMA PINTU AIR</th>
-                    <th>TANGGAL</th>
-                    <th>TINGGI AIR</th>
-                    <th>STATUS SIAGA</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for data in data_list %}
-                <tr>
-                    <td>{{ data['ID_PINTU_AIR'] }}</td>
-                    <td>{{ data['NAMA_PINTU_AIR'] }}</td>
-                    <td>{{ data['TANGGAL'] }}</td>
-                    <td>{{ data['TINGGI_AIR'] }}</td>
-                    <td>{{ data['STATUS_SIAGA'] }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+<div class="container">
+  <h4 class="mt-2">Tinggi Muka Air</h4>
+  <div class="form-group">
+      <label for="filter-by-status-siaga-input">Filter by Status Siaga:</label>
+      <select class="form-control" id="filter-by-status-siaga-input">
+          <option value="">All</option>
+          <option value="Normal">Normal</option>
+          <option value="Siaga 1">Siaga 1</option>
+          <option value="Siaga 2">Siaga 2</option>
+          <option value="Siaga 3">Siaga 3</option>
+          <option value="Siaga 4">Siaga 4</option>
+      </select>
+  </div>
+  <table class="table table-bordered table-striped mt-4">
+      <thead class="thead-dark">
+          <tr>
+              <th>ID PINTU AIR</th>
+              <th>NAMA PINTU AIR</th>
+              <th>TANGGAL</th>
+              <th>TINGGI AIR (CM)</th>
+              <th>STATUS SIAGA</th>
+          </tr>
+      </thead>
+      <tbody>
+        {% for data in data_list %}
+        <tr class="{% if data['STATUS_SIAGA'] == 'Siaga 3' %}siaga-3{% elif data['STATUS_SIAGA'] == 'Normal' %}normal{% elif data['STATUS_SIAGA'] == 'Siaga 2' %}siaga-2{% elif data['STATUS_SIAGA'] == 'Siaga 4' %}siaga-4{% endif %}">
+          <td>{{ data['ID_PINTU_AIR'] }}</td>
+          <td>{{ data['NAMA_PINTU_AIR'] }}</td>
+          <td>{{ data['TANGGAL'] }}</td>
+          <td>{{ data['TINGGI_AIR'] }}</td>
+          <td>{{ data['STATUS_SIAGA'] }}</td>
+       </tr>
+        {% endfor %}
+      </tbody>
+  </table>
+    <table class="table table-striped table-bordered mt-4">
+        <h4>Keterangan Status</h4>
+        <thead class="thead-dark">
+            <tr>
+                <th>Status</th>
+                <th>Tinggi Muka Air (cm)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Aman</td>
+                <td>100 atau kurang</td>
+            </tr>
+            <tr>
+                <td>Siaga 1</td>
+                <td>100-150</td>
+            </tr>
+            <tr>
+                <td>Siaga 2</td>
+                <td>150-200</td>
+            </tr>
+            <tr>
+                <td>Siaga 3</td>
+                <td>200-250</td>
+            </tr>
+            <tr>
+                <td>Siaga 4</td>
+                <td>250 atau lebih</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">*Ketinggian air yang sebenarnya dapat bervariasi tergantung pada lokasi tertentu dan kondisi cuaca.</td>
+            </tr>
+        </tfoot>
+    </table>
+    <div class="container mt-4">
+        <h2 class="text-center">Lokasi Bendungan </h1>
+        <div id="map" class="map"></div>
     </div>
- <!-- Map Section -->
- 
- 
-    <!-- Bootstrap JS and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</div>
+<!-- Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+    var map = L.map('map').setView([-6.2088, 106.8456], 12); // Set initial coordinates and zoom level
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+    var geojsonUrl = 'https://jakartasatu.jakarta.go.id/server/rest/services/DSDA/Pompa__Pintu__Sistem_Polder_View/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson';
+    fetch(geojsonUrl)
+        .then(response => response.json())
+        .then(data => {
+            var geojsonLayer = L.geoJSON(data.features, {
+                pointToLayer: function (feature, latlng) {
+                    return L.marker(latlng);
+                },
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup('<b>' + feature.properties.NAMA_PINTU + '</b><br>' + feature.properties.KEWENANGAN);
+                }
+            });
+            geojsonLayer.addTo(map);
+        })
+        
+        .catch(error => console.error('Error fetching GeoJSON:', error));
 
-    <script>
-        var map = L.map('map').setView([-6.2088, 106.8456], 12); // Set initial coordinates and zoom level
+    // Get the table element
+    var table = document.querySelector(".table");
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
+    // Get the table rows
+    var rows = table.getElementsByTagName("tr");
 
-        var geojsonUrl = 'https://jakartasatu.jakarta.go.id/server/rest/services/DSDA/Pompa__Pintu__Sistem_Polder_View/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson';
+    // Add an event listener to the filter input field
+    document.getElementById("filter-by-status-siaga-input").addEventListener("change", function() {
+        // Get the filter criteria
+        var filter = this.value.toLowerCase();
 
-        fetch(geojsonUrl)
-            .then(response => response.json())
-            .then(data => {
-                var geojsonLayer = L.geoJSON(data.features, {
-                    pointToLayer: function (feature, latlng) {
-                        return L.marker(latlng);
-                    },
-                    onEachFeature: function (feature, layer) {
-                        layer.bindPopup('<b>' + feature.properties.NAMA_PINTU + '</b><br>' + feature.properties.KEWENANGAN);
-                    }
-                });
+        // Filter the rows by Status Siaga
+        var noDataFound = true;
+        for (var i = 1; i < rows.length; i++) {
+            var status = rows[i].cells[4].textContent.toLowerCase();
+            if (filter === "" || status.includes(filter)) {
+                rows[i].style.display = "";
+                noDataFound = false;
+            } else {
+                rows[i].style.display = "none";
+            }
+        }
 
-                geojsonLayer.addTo(map);
-            })
-            .catch(error => console.error('Error fetching GeoJSON:', error));
-    </script>
+        // Show/hide the "No data found" message
+        var noDataFoundRow = document.getElementById("no-data-found");
+        if (noDataFound) {
+            noDataFoundRow.style.display = "";
+        } else {
+            noDataFoundRow.style.display = "none";
+        }
+    });
 
+    // Add popups for Siaga 3 locations
+    $(document).ready(function() {
+      $('tr').each(function() {
+          if ($(this).find('td:eq(4)').text() == 'Siaga 3') {
+              var lat = $(this).data('lat');
+              var lng = $(this).data('lng');
+              L.marker([lat, lng]).addTo(map)
+                  .bindPopup('This location is in Siaga 3 status.')
+                  .openPopup();
+          }
+      });
+  });
+    
+</script>
 </body>
 </html>

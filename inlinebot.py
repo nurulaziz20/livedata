@@ -38,8 +38,8 @@ def format_data(data_list):
     for item in data_list:
         formatted_data += f"Name: {item['NAMA_PINTU_AIR']}\n"
         formatted_data += f"Location: {item['LOKASI']}\n"
-        formatted_data += f"Water Height: {item['TINGGI_AIR']} cm\n"
-        formatted_data += f"Status: {item['STATUS_SIAGA']}\n"
+        formatted_data += f"Water Height: {int(item['TINGGI_AIR'])/10} cm\n"  # Convert to integer before dividing by 10
+        formatted_data += f"{item['STATUS_SIAGA']}\n"
         formatted_data += f"Tanggal: {item['TANGGAL']}\n"
         formatted_data += "-" * 20 + "\n"  # Add a separator line between entries
     return formatted_data

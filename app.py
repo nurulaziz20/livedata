@@ -26,17 +26,27 @@ def fetch_data():
         print(f"Failed to fetch data. Status Code: {response.status_code}")
         return []
 
-# Function to process and use the fetched data
+def convert_to_cm(tinggi_air_mm):
+  return int(tinggi_air_mm) / 10
+
+
+
+#fetched data
 def process_data():
     data_list = fetch_data()
+    for data in data_list:
+        data['TINGGI_AIR'] = convert_to_cm(data['TINGGI_AIR'])
+        data['TINGGI_AIR'] = str(data['TINGGI_AIR']).rstrip(".0")
     return data_list
 
-# Schedule data fetching and processing every 5 minutes
+
+
+# Schedule tiap 5 minutes
 schedule.every(5).minutes.do(process_data)
 
-# Main function to execute the code
+
 def main():
-    # Start the scheduler in a background thread
+    
     def run_scheduler():
         while True:
             schedule.run_pending()
@@ -46,7 +56,7 @@ def main():
     scheduler_thread = threading.Thread(target=run_scheduler)
     scheduler_thread.start()
 
-    # Run the Flask app to show the data on a webpage
+    
     app.run(debug=True)
 
 # Flask route to render the data on a webpage

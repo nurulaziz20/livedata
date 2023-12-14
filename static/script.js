@@ -110,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Load the GeoJSON data from the external file
   fetch('static/banjir.geojson') // Replace 'flood_data.geojson' with the path to your new GeoJSON file
     .then(response => response.json())
+    
     .then(geojsonData => {
       // Add the GeoJSON features to their respective layer groups
       L.geoJSON(geojsonData, {

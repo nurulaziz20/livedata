@@ -32,3 +32,30 @@
     height: 2px;
     background-color: #007bff;
 }
+td[data-status="Siaga 1"] {
+    background-color: #ffc107;
+}
+td[data-status="Siaga 2"] {
+    background-color: #ff9800;
+    color: #fff;
+}
+td[data-status="Siaga 3"] {
+    background-color: orange;
+    color: #fff;
+}
+td[data-status="Siaga 4"] {
+    background-color: #f44336;
+    color: #fff;
+}
+.siaga-3 {
+    background-color: orange;
+}
+.normal {
+    background-color: green;
+}
+.siaga-2 {
+    background-color: yellow;
+}
+.siaga-4 {
+    background-color: red;
+}

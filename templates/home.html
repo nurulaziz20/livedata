@@ -2,20 +2,20 @@
 <html>
 <head>
     <title>SIG Dashboard</title>
-    <!-- Add Bootstrap CSS -->
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     
-    <!-- Add CSS styles for the map container -->
+   
     <style>
         #map {
-            height: 400px; /* Set the height of the map container */
+            height: 400px; 
         }
     </style>
 </head>
 <body>
 
-<!-- Include the navbar -->
+
 {% include 'navbar.html' %}
 
 <div class="container mt-4">
@@ -35,7 +35,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<!-- Add this script to handle the button click -->
+
 <script>
 document.getElementById('generateCoordinateBtn').addEventListener('click', function() {
     if ('geolocation' in navigator) {
